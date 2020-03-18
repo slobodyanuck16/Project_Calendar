@@ -1,0 +1,116 @@
+.page {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.button {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.icon-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__content {
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #cccccc45;
+  z-index: 10;
+}
+
+.popup__content {
+  position: absolute;
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  display: flex;
+  padding: 20px 40px 10px 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.header__element {
+  margin-left: 20px;
+}
+
+.create-event-btn {
+  display: flex;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0px 1px 5px -2px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.create-event-btn__icon {
+  font-size: 30px;
+  margin: -5px 10px 0px 0px;
+}
+
+.navigation__today-btn {
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.fa-chevron-right {
+  width: 15px;
+  height: 10px;
+  font-size: 15px;
+}
+
+.fa-chevron-left {
+  width: 15px;
+  height: 10px;
+  font-size: 15px;
+}
+
+.navigation__displayed-month {
+  font-size: 25px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=styles.css.map */
