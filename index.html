@@ -28,7 +28,31 @@
         </div>
     </header>
     <section class="calendar">
-        <header class="calendar__header"></header>
+        <header class="calendar__header">
+            <div class="calendar__header__days">
+                <div class="calendar__header__days-day">MON
+                    <div class="calendar__header__days-num">16</div>
+                </div>
+                <div class="calendar__header__days-day">TUE
+                    <div class="calendar__header__days-num">17</div>
+                </div>
+                <div class="calendar__header__days-day">WED
+                    <div class="calendar__header__days-num">18</div>
+                </div>
+                <div class="calendar__header__days-day">THU
+                    <div class="calendar__header__days-num">19</div>
+                </div>
+                <div class="calendar__header__days-day">FRI
+                    <div class="calendar__header__days-num">20</div>
+                </div>
+                <div class="calendar__header__days-day">SAT
+                    <div class="calendar__header__days-num">21</div>
+                </div>
+                <div class="calendar__header__days-day">SUN
+                    <div class="calendar__header__days-num">22</div>
+                </div>
+            </div>
+        </header>
         <div class="calendar__body">
             <div class="calendar__week-container">
                 <div class="calendar__time-scale"></div>
@@ -38,15 +62,19 @@
     </section>
     <div class="modal hidden overlay">
         <div class="modal__content">
+            <div class="modal__content__icons">
+                <i class="small material-icons modal__content__icons__clock">access_time</i>
+                <i class="small material-icons modal__content__icons__list">playlist_add</i>
+            </div>
             <div class="create-event">
                 <button class="create-event__close-btn">+</button>
                 <form class="event-form">
                     <input type="text" name="title" placeholder="Title" class="event-form__field" />
                     <div class="event-form__time">
-                        <input type="date" name="date" class="event-form__field" />
-                        <input type="time" name="startTime" class="event-form__field" />
+                        <input type="date" name="date" class="event-form__time__elem" />
+                        <input type="time" name="startTime" class="event-form__time__elem" />
                         <span>-</span>
-                        <input type="time" name="endTime" class="event-form__field" />
+                        <input type="time" name="endTime" class="event-form__time__elem" />
                     </div>
                     <textarea name="description" placeholder="Description" class="event-form__field"></textarea>
                     <button type="submit" class="event-form__submit-btn">Create</button>

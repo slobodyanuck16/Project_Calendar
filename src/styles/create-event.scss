@@ -1,1 +1,43 @@
 // стили формы события внутри модального окна
+.modal__content {
+    display: flex;
+    &__icons {
+        display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    &__clock {
+
+    }
+    &__list {
+
+    }
+    }
+}
+
+.event-form {
+    // display: flex;
+    // flex-direction: column; 
+    &__time {
+        display: flex;
+        align-items: center;
+        border: none;
+        &__elem {
+            border: none;
+        }
+    }
+    &__field {
+        border: none;
+    }
+    &__submit-btn {
+        float: right;
+    }
+}
+
+.create-event {
+    &__close-btn {
+        float: right;
+        background-color: transparent;
+        border: none;
+        transform: rotate(45deg);
+    }
+}

@@ -1,1 +1,19 @@
 // стили сетки календаря и заголовка календаря с днями недели
+.calendar__header__days {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 50px;
+}
+
+.calendar__header__days-day {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+}
+
+.calendar__header__days-num {
+    margin-top: 10px;
+    font-size: 25px;
+}

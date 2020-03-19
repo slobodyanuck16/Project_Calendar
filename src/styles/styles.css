@@ -54,8 +54,57 @@
   border-radius: 8px;
 }
 
-.hidden {
+.popup.hidden.overlay {
   display: none;
+}
+
+.calendar__header__days {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 50px;
+}
+
+.calendar__header__days-day {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+}
+
+.calendar__header__days-num {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.modal__content {
+  display: flex;
+}
+.modal__content__icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.event-form__time {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+.event-form__time__elem {
+  border-bottom: none;
+}
+.event-form__field {
+  border: none;
+}
+.event-form__submit-btn {
+  float: right;
+}
+
+.create-event__close-btn {
+  float: right;
+  background-color: transparent;
+  border: none;
+  transform: rotate(45deg);
 }
 
 .header {
