@@ -20,11 +20,21 @@
 .event-form {
     // display: flex;
     // flex-direction: column; 
+    &__title {
+        border: none;
+        margin-bottom: 100px;
+    }
     &__time {
         display: flex;
         align-items: center;
         border: none;
-        &__elem {
+        &__date {
+            border: none;
+        }
+        &__startTime {
+            border: none;
+        }
+        &__endTime {
             border: none;
         }
     }

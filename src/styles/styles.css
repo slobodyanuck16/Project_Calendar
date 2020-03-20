@@ -88,18 +88,29 @@
   justify-content: space-around;
   margin-right: 20px;
 }
+.event-form__description {
+  border: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.event-form__title {
+  border: none;
+  margin-bottom: 100px;
+}
 .event-form__time {
   display: flex;
   align-items: center;
   border: none;
 }
-.event-form__time__elem {
+.event-form__time__date {
   border: none;
 }
-.event-form__field {
+.event-form__time__startTime {
   border: none;
-  margin-top: 25px;
-  margin-bottom: 25px;
+}
+.event-form__time__endTime {
+  border: none;
 }
 .event-form__submit-btn {
   float: right;
