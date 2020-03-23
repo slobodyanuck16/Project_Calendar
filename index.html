@@ -29,52 +29,67 @@
     </header>
     <section class="calendar">
         <header class="calendar__header">
-            <div class="calendar__header__days">
-                <div class="calendar__header__days-day">MON
-                    <div class="calendar__header__days-num">16</div>
+            <div class="calendar__header-days">
+                <div class="calendar__header-days-day">MON
+                    <div class="calendar__header-days-num">16</div>
                 </div>
-                <div class="calendar__header__days-day">TUE
-                    <div class="calendar__header__days-num">17</div>
+                <div class="calendar__header-days-day">TUE
+                    <div class="calendar__header-days-num">17</div>
                 </div>
-                <div class="calendar__header__days-day">WED
-                    <div class="calendar__header__days-num">18</div>
+                <div class="calendar__header-days-day">WED
+                    <div class="calendar__header-days-num">18</div>
                 </div>
-                <div class="calendar__header__days-day">THU
-                    <div class="calendar__header__days-num">19</div>
+                <div class="calendar__header-days-day">THU
+                    <div class="calendar__header-days-num">19</div>
                 </div>
-                <div class="calendar__header__days-day">FRI
-                    <div class="calendar__header__days-num">20</div>
+                <div class="calendar__header-days-day">FRI
+                    <div class="calendar__header-days-num">20</div>
                 </div>
-                <div class="calendar__header__days-day">SAT
-                    <div class="calendar__header__days-num">21</div>
+                <div class="calendar__header-days-day">SAT
+                    <div class="calendar__header-days-num">21</div>
                 </div>
-                <div class="calendar__header__days-day">SUN
-                    <div class="calendar__header__days-num">22</div>
+                <div class="calendar__header-days-day">SUN
+                    <div class="calendar__header-days-num">22</div>
                 </div>
             </div>
         </header>
         <div class="calendar__body">
             <div class="calendar__week-container">
-                <div class="calendar__time-scale"></div>
-                <div class="calendar__week"></div>
+                <div class="calendar__time-scale">
+                </div>
+                <div class="calendar__lines">
+                    <div class="calendar__lines-top"></div>
+                    <div class="calendar__lines-semi"></div>
+                    <div class="calendar__lines-semi"></div>
+                    <div class="calendar__lines-semi"></div>
+                    <div class="calendar__lines-semi"></div>
+                    <div class="calendar__lines-semi"></div>
+                    <div class="calendar__lines-semi"></div>
+                </div>
+                <div class="calendar__week">
+                    <div class="calendar__day" data-day="1">
+                        <div class="calendar__day-line"></div>
+                        <div class="calendar__day-sell" data-time="0"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <div class="modal hidden overlay">
         <div class="modal__content">
-            <div class="modal__content__icons">
-                <i class="small material-icons modal__content__icons__clock">access_time</i>
-                <i class="small material-icons modal__content__icons__list">playlist_add</i>
+            <div class="modal__content-icons">
+                <i class="small material-icons modal__content-clock">access_time</i>
+                <i class="small material-icons modal__content-list">playlist_add</i>
             </div>
             <div class="create-event">
                 <form class="event-form">
                     <button class="create-event__close-btn">+</button>
                     <input type="text" name="title" placeholder="Title" class="event-form__title" />
                     <div class="event-form__time">
-                        <input type="date" name="date" class="event-form__time__date" />
-                        <input type="time" name="startTime" class="event-form__time__starTime" />
+                        <input type="date" name="date" class="event-form__time-date" />
+                        <input type="time" name="startTime" class="event-form__time-start" />
                         <span>-</span>
-                        <input type="time" name="endTime" class="event-form__time__endTime" />
+                        <input type="time" name="endTime" class="event-form__time-end" />
                     </div>
                     <textarea name="description" placeholder="Description" class="event-form__description"></textarea>
                     <button type="submit" class="event-form__submit-btn">Create</button>
@@ -90,7 +105,7 @@
     </div>
     </div>
     <script type="text/javascript" src="materialize\js\materialize.js"></script>
-    <script src="scripts/index.js" type="module"></script>
+    <script src="src\srcipts\index.js" type="module"></script>
 </body>
 
 </html>

@@ -1,22 +1,26 @@
 // стили формы события внутри модального окна
-.modal__content {
-    display: flex;
-    width: 390px;
-    height: 350px;
-    &__icons {
+.modal {
+    &__content {
+        display: flex;
+        width: 390px;
+        height: 350px;
+    }
+    &__content-icons {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         margin-right: 20px;
-        &__clock {}
-        &__list {}
     }
+    &__content-clock {}
+    &__content-list {}
 }
+
 .event-form__description {
-        border: none;
-        margin-top: 25px;
-        margin-bottom: 25px;
+    border: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
+
 .event-form {
     // display: flex;
     // flex-direction: column; 
@@ -28,15 +32,15 @@
         display: flex;
         align-items: center;
         border: none;
-        &__date {
-            border: none;
-        }
-        &__startTime {
-            border: none;
-        }
-        &__endTime {
-            border: none;
-        }
+    }
+    &__time-date {
+        border: none;
+    }
+    &__time-start {
+        border: none;
+    }
+    &__time-end {
+        border: none;
     }
     &__submit-btn {
         float: right;
