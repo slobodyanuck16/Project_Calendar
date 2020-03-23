@@ -9,16 +9,14 @@ export const generateNumbersRange = (from, to) => {
 const generateDay = () => {
     // функция должна сгенерировать и вернуть разметку недели в виде строки
     // разметка состоит из 24 часовых временных слотов (.calendar__time-slot)
-    const days = document.querySelector('.calendar__day')
     
-    const sells = generateNumbersRange(0,23)
+    const sells = generateNumbersRange(0,24)
     .map(daySell => `
     <div
         class="calendar__day-sell" data-time="${daySell}"
     ></div>
     `).join('');
-
-    days.innerHTML = sells;
+    return sells;
 };
 
 export const renderWeek = () => {

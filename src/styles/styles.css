@@ -62,11 +62,11 @@
   display: none;
 }
 
-.calendar__header-days {
+.calendar__header {
   display: flex;
 }
 
-.calendar__header-days-day {
+.calendar__header-day {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -75,11 +75,11 @@
   width: 14%;
 }
 
-.calendar__header-days-day:first-child {
+.calendar__header-day:first-child {
   margin-left: 92px;
 }
 
-.calendar__header-days-num {
+.calendar__header-num {
   margin-top: 10px;
   font-size: 25px;
 }
@@ -90,7 +90,7 @@
 }
 
 .calendar__day {
-  width: 14%;
+  width: 15%;
   border-right: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -109,6 +109,10 @@
   height: 60px;
   width: 100%;
   border-bottom: 1px solid black;
+}
+
+.calendar__day-sell:last-child {
+  border: none;
 }
 
 .calendar__week-container {
