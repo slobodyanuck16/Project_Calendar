@@ -16,7 +16,7 @@ export const renderHeader = () => {
     
     const day = generateNumbersRange(1,7)
     .map(headerDay => `
-    <div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek}<div class="calendar__header-num" data-num="">${headerDay}</div>${headerDay}</div>`).join('');
+    <div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek}<div class="calendar__header-num" data-num="">${headerDay}</div></div>`).join('');
 
     header.innerHTML = day;
 };
