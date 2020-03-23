@@ -12,14 +12,13 @@
     flex-direction: column;
 }
 
-.calendar__lines-top {
-    height: 20.2px;
-    border-bottom: 1px solid black;
-}
-
 .calendar__lines-semi {
 border-bottom: 1px solid black;
 height: 60px;
+}
+
+.calendar__lines-semi:first-child {
+    height: 20.2px;
 }
 
 .calendar__time-scale {

@@ -31,4 +31,12 @@ export const renderTimescale = () => {
         timeScale.prepend(timePolar);
 };
 
+export const renderLines = () => {
+    const lines = document.querySelector('.calendar__lines')
+    const line = generateNumbersRange(0,24)
+    .map(timeScaleLines => `<div class="calendar__lines-semi" data-line="${timeScaleLines}"></div>`).join('');
+    lines.innerHTML = line;
+}
+
+renderLines();
 renderTimescale();
