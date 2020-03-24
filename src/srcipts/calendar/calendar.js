@@ -1,3 +1,7 @@
+import { getItem } from '../common/storage.js';
+import { generateWeekRange } from '../common/time.untils.js';
+import { renderEvents } from '../events/events.js';
+
 export const generateNumbersRange = (from, to) => {
     const result = [];
     for (let i = from; i <= to; i++) {

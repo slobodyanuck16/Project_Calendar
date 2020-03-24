@@ -1,4 +1,8 @@
-const daysOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+// import { getItem } from '../common/storage.js';
+// import { generateWeekRange } from '../common/time.untils.js';
+// import { openModal } from '../common/modal.js';
+
+const daysOfWeek = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT','SUN'];
 
 export const generateNumbersRange = (from, to) => {
     const result = [];
@@ -14,9 +18,9 @@ export const renderHeader = () => {
     // в дата атрибуте каждой ячейки должно хранить для какого часа эта ячейка
     const header = document.querySelector('.calendar__header')
     
-    const day = generateNumbersRange(1,7)
+    const day = generateNumbersRange(0,6)
     .map(headerDay => `
-    <div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek}<div class="calendar__header-num" data-num="">${headerDay}</div></div>`).join('');
+    <div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}<div class="calendar__header-num" data-num="">${headerDay}</div></div>`).join('');
 
     header.innerHTML = day;
 };
