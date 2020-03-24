@@ -4,6 +4,8 @@
 
 const daysOfWeek = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT','SUN'];
 
+const numberOfDay = ['16','17','18','19','20','21','22']
+
 export const generateNumbersRange = (from, to) => {
     const result = [];
     for (let i = from; i <= to; i++) {
@@ -20,7 +22,7 @@ export const renderHeader = () => {
     
     const day = generateNumbersRange(0,6)
     .map(headerDay => `
-    <div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}<div class="calendar__header-num" data-num="">${headerDay}</div></div>`).join('');
+    <div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}<div class="calendar__header-num" data-num="">${numberOfDay[headerDay]}</div></div>`).join('');
 
     header.innerHTML = day;
 };
