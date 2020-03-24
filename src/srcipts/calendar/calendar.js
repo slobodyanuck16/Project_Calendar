@@ -1,5 +1,5 @@
 import { getItem } from '../common/storage.js';
-import { generateWeekRange } from '../common/time.untils.js';
+import { generateWeekRange } from '../common/time.utils.js';
 import { renderEvents } from '../events/events.js';
 
 export const generateNumbersRange = (from, to) => {

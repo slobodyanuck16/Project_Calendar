@@ -1,10 +1,13 @@
-// import { getItem } from '../common/storage.js';
-// import { generateWeekRange } from '../common/time.untils.js';
+// 1 - сделать чтобы в разметке генерировались 7 дней, начало с понедельника, и ориентируясь на понедельник выдавало числа этой недели 
+// 1 - создаю функцию которая имеет 7 итераций, и на каждой итерации вставляет див с строкой дня недели, и див с числом этого дня недели
+// 
+// 
+
+import { getItem } from '../common/storage.js';
+import { generateWeekRange } from '../common/time.utils.js';
 // import { openModal } from '../common/modal.js';
 
 const daysOfWeek = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT','SUN'];
-
-const numberOfDay = ['16','17','18','19','20','21','22']
 
 export const generateNumbersRange = (from, to) => {
     const result = [];
@@ -20,9 +23,15 @@ export const renderHeader = () => {
     // в дата атрибуте каждой ячейки должно хранить для какого часа эта ячейка
     const header = document.querySelector('.calendar__header')
     
+    //${generateWeekRange(getStartOfWeek(new Date()))[headerDay].getDate()}
+
     const day = generateNumbersRange(0,6)
-    .map(headerDay => `
-    <div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}<div class="calendar__header-num" data-num="">${numberOfDay[headerDay]}</div></div>`).join('');
+    .map(function headersDiv (headerDay) { 
+        // let week = generateWeekRange(getStartOfWeek(new Date()))[headerDay].getDate()
+        let monday = getItem('displayedWeekStart')
+        return `<div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}
+        <div class="calendar__header-num" data-num="">${generateWeekRange(monday)[headerDay].getDate()}</div>
+    </div>`}).join('');
 
     header.innerHTML = day;
 };

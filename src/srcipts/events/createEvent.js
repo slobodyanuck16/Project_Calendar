@@ -1,6 +1,6 @@
 import { getItem, setItem } from '../common/storage.js';
 import { renderEvents } from './events.js';
-import { getDateTime } from '../common/time.untils.js';
+import { getDateTime } from '../common/time.utils.js';
 import { closeModal } from '../common/modal.js';
 
 const eventFormElem = document.querySelector('.event-form');
