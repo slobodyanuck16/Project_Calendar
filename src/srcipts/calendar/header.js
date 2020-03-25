@@ -28,7 +28,7 @@ export const renderHeader = () => {
     const day = generateNumbersRange(0,6)
     .map(function headersDiv (headerDay) { 
         // let week = generateWeekRange(getStartOfWeek(new Date()))[headerDay].getDate()
-        let monday = getItem('displayedWeekStart')
+        const monday = getItem('displayedWeekStart')
         return `<div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}
         <div class="calendar__header-num" data-num="">${generateWeekRange(monday)[headerDay].getDate()}</div>
     </div>`}).join('');

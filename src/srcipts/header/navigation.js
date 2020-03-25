@@ -15,8 +15,8 @@ function renderCurrentMonth() {
 const onChangeWeek = e => {
     // при переключении недели обновите displayedWeekStart в storage
     // и перерисуйте все необходимые элементы страницы (renderHeader, renderWeek, renderCurrentMonth, renderRedLine)
-    let monday = getItem('displayedWeekStart');
-    let inWeek = new Date();
+    const monday = getItem('displayedWeekStart');
+    const inWeek = new Date();
     inWeek.setDate(monday.getDate()+7);
     setItem('displayedWeekStart', inWeek)
     renderHeader();
