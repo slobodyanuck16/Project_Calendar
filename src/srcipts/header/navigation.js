@@ -18,10 +18,36 @@ const onChangeWeek = e => {
     // при переключении недели обновите displayedWeekStart в storage
     // и перерисуйте все необходимые элементы страницы (renderHeader, renderWeek, renderCurrentMonth, renderRedLine)
     setItem('displayedWeekStart', getStartOfWeek(new Date() + 7));
+    const renderHeader = () => {
+        const header = document.querySelector('.calendar__header')
+        const day = generateNumbersRange(0,6)
+        .map(function headersDiv (headerDay) { 
+            let monday = getItem('displayedWeekStart')
+            return `<div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}
+            <div class="calendar__header-num" data-num="">${generateWeekRange(monday)[headerDay].getDate()}</div>
+        </div>`}).join('');
+        header.innerHTML = day;
+    };
+    const renderWeek = () => {
+        const week = document.querySelector('.calendar__week')
+        const days = generateNumbersRange(1,7)
+        .map(calendarDay => `
+        <div
+            class="calendar__day" data-day="${calendarDay}"
+            ><div class="calendar__day-line"></div>${generateDay()}</div>
+        `).join('');
+        week.innerHTML = days;
+    };
+    function renderCurrentMonth() {
+        displayedMonthElem.innerHTML = `${getDisplayedMonth(getStartOfWeek(new Date()))}`
+    }
+    renderHeader();
+    renderWeek();
+    renderCurrentMonth();
 };
 
 export const initNavigation = () => {
     renderCurrentMonth();
     navElem.addEventListener('click', onChangeWeek);
-    renderHeader();
+    // renderHeader(); ???
 };
