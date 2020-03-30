@@ -22,12 +22,8 @@ export const renderHeader = () => {
     // полученную разметку вставить на страницу с помощью innerHTML
     // в дата атрибуте каждой ячейки должно хранить для какого часа эта ячейка
     const header = document.querySelector('.calendar__header')
-    
-    //${generateWeekRange(getStartOfWeek(new Date()))[headerDay].getDate()}
-
     const day = generateNumbersRange(0,6)
     .map(function headersDiv (headerDay) { 
-        // let week = generateWeekRange(getStartOfWeek(new Date()))[headerDay].getDate()
         const monday = getItem('displayedWeekStart')
         return `<div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}
         <div class="calendar__header-num" data-num="">${generateWeekRange(monday)[headerDay].getDate()}</div>

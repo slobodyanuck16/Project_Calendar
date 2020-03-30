@@ -14,7 +14,6 @@ const displayedMonthElem = document.querySelector('.navigation__displayed-month'
 function renderCurrentMonth() {
     // отрисовать месяц, к которому относиться текущая неделя
     displayedMonthElem.innerHTML = `${getDisplayedMonth(getItem('displayedWeekStart'))}`
-    console.log(getItem('displayedWeekStart'));
 }
 
 const onChangeWeek = event => {
