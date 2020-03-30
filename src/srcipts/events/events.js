@@ -19,19 +19,20 @@ const createEventElement = event => {
     // событие должно позиционироваться абсолютно внутри нужной ячейки времени внутри дня
     // нужно добавить id события в дата атрибут
     // здесь для создания DOM элемента события используйте document.createElement
-    const {id, title, description, start , end} = event;
+    const { id, title, description, start, end } = event;
     const eventId = event[id];
     const eventTitle = event[title];
     const eventDescription = event[description];
     const eventStart = event[start];
     const eventEnd = event[end];
     const domElement = document.createElement('div');
-    const currentEvent = `<div data-event-id=${eventId}>
-                            <div class="event__title">${eventTitle}</div>
-                            <div class="event__description">${eventDescription}</div>
-                            <div class="event__time">"${eventStart} - ${eventEnd}"</div>
-                          </div>`;
-    domElement.innerHTML = currentEvent;
+    // const currentEvent = `<div data-event-id=${eventId}>
+    //                         <div class="event__title">${eventTitle}</div>
+    //                         <div class="event__description">${eventDescription}</div>
+    //                         <div class="event__time">"${eventStart} - ${eventEnd}"</div>
+    //                       </div>`;
+    // currentEvent.innerHTML = domElement;
+    return domElement;
 };
 
 export const renderEvents = () => {
@@ -75,7 +76,7 @@ export const renderEvents = () => {
         const currentDay = currentDate.getDate();
         const currentWeekStart = currentDate.getDate() - currentDate.getDay() + 1;
         const currentWeekEnd = currentWeekStart + 6;
-      
+
         // console.log(
         //   "endDateFormatted: ",
         //   endDateFormatted,
@@ -88,21 +89,22 @@ export const renderEvents = () => {
         //   " currentWeekEnd:= ",
         //   currentWeekEnd
         // );
-      
+
         return (
-          startDateFormatted >= currentWeekStart &&
-          startDateFormatted <= currentWeekEnd &&
-          (endDateFormatted >= currentWeekStart && endDateFormatted <= currentWeekEnd)
+            startDateFormatted >= currentWeekStart &&
+            startDateFormatted <= currentWeekEnd &&
+            (endDateFormatted >= currentWeekStart && endDateFormatted <= currentWeekEnd)
         );
-      };
-      
-      const filteredEvents = events.filter(isCurrentWeek);
-      
-      isCurrentWeek(events[1]);
-      console.log(filteredEvents);
-      const timeSlot = document.querySelector('.calendar__day-sell')
-    //   const finalEvents = createEventElement(filteredEvents);
-      timeSlot.innerHTML = createEventElement(filteredEvents);
+    };
+
+    const filteredEvents = events.filter(isCurrentWeek);
+
+    isCurrentWeek(events[1]);
+    console.log(filteredEvents);
+    const timeSlot = document.querySelector('.calendar__day-sell')
+        //   const finalEvents = createEventElement(filteredEvents);
+        //   timeSlot.innerHTML = createEventElement(filteredEvents);
+    createEventElement(filteredEvents).innerHTML = timeSlot;
 };
 renderEvents();
 
