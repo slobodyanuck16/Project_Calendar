@@ -26,13 +26,15 @@ const createEventElement = event => {
     const eventStart = event[start];
     const eventEnd = event[end];
     const domElement = document.createElement('div');
-    // const currentEvent = `<div data-event-id=${eventId}>
-    //                         <div class="event__title">${eventTitle}</div>
-    //                         <div class="event__description">${eventDescription}</div>
-    //                         <div class="event__time">"${eventStart} - ${eventEnd}"</div>
-    //                       </div>`;
-    // currentEvent.innerHTML = domElement;
+    const currentEvent = `<div data-event-id=${eventId}>
+                            <div class="event__title">${eventTitle}</div>
+                            <div class="event__description">${eventDescription}</div>
+                            <div class="event__time">"${eventStart} - ${eventEnd}"</div>
+                          </div>`;
+    domElement.innerHTML = currentEvent;
     return domElement;
+    // return domElement.append(currentEvent);
+
 };
 
 export const renderEvents = () => {
@@ -104,7 +106,8 @@ export const renderEvents = () => {
     const timeSlot = document.querySelector('.calendar__day-sell')
         //   const finalEvents = createEventElement(filteredEvents);
         //   timeSlot.innerHTML = createEventElement(filteredEvents);
-    createEventElement(filteredEvents).innerHTML = timeSlot;
+    const domElem = createEventElement(filteredEvents);
+    timeSlot.innerHTML = domElem;
 };
 renderEvents();
 
