@@ -31,14 +31,14 @@ export const renderWeek = () => {
     // после того, как отрисовали всю сетку для отображаемой недели - добавляем события методом renderEvents
     const week = document.querySelector('.calendar__week')
     
-    const days = generateNumbersRange(1,7)
-    .map(calendarDay => `
-    <div
-        class="calendar__day" data-day="${calendarDay}"
-        ><div class="calendar__day-line"></div>${generateDay()}</div>
-    `).join('');
-
+    const days = generateNumbersRange(0,6)
+    .map(function calendarDay (headerDay) {
+            const monday = getItem('displayedWeekStart')
+            return `<div
+            class="calendar__day" data-day="${generateWeekRange(monday)[headerDay].getDate()}"
+            ><div class="calendar__day-line"></div>${generateDay()}
+            </div>`}).join('');
+    
     week.innerHTML = days;
+    renderEvents();
 };
-
-renderWeek();

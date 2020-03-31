@@ -26,12 +26,10 @@ export const renderHeader = () => {
     .map(function headersDiv (headerDay) { 
         const monday = getItem('displayedWeekStart')
         return `<div class="calendar__header-day" data-day="${headerDay}">${daysOfWeek[headerDay]}
-        <div class="calendar__header-num" data-num="">${generateWeekRange(monday)[headerDay].getDate()}</div>
+        <div class="calendar__header-num" data-num="${generateWeekRange(monday)[headerDay].getDate()}">${generateWeekRange(monday)[headerDay].getDate()}</div>
     </div>`}).join('');
 
     header.innerHTML = day;
 };
-
-renderHeader();
 
 // при клике на кнопку "Create" открыть модальное окно с формой для создания события

@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // инициализация всех элементов
     renderTimescale();
     setItem('displayedWeekStart', getStartOfWeek(new Date()));
-    renderWeek();
     renderHeader();
+    renderWeek();
     initNavigation();
     initEventForm();
     renderRedLine();

@@ -20,20 +20,22 @@ const createEventElement = event => {
     // нужно добавить id события в дата атрибут
     // здесь для создания DOM элемента события используйте document.createElement
     const { id, title, description, start, end } = event;
-    const eventId = event[id];
-    const eventTitle = event[title];
-    const eventDescription = event[description];
-    const eventStart = event[start];
-    const eventEnd = event[end];
+    const eventId = event[0].id;
+    const eventTitle = event[0].title;
+    const eventDescription = event[0].description;
+    const eventStart = event[0].start;
+    const eventEnd = event[0].end;
     const domElement = document.createElement('div');
-    const currentEvent = `<div data-event-id=${eventId}>
-                            <div class="event__title">${eventTitle}</div>
-                            <div class="event__description">${eventDescription}</div>
-                            <div class="event__time">"${eventStart} - ${eventEnd}"</div>
-                          </div>`;
+    domElement.setAttribute('data-event-id', `${eventId}`);
+    domElement.classList.add('event')
+    const currentEvent =`<div class="event__title">"${eventTitle}"</div>
+                        <div class="event__description">"${eventDescription}"</div>
+                        <div class="event__time">${eventStart.getHours()} - ${eventEnd.getHours()}</div>`;
     domElement.innerHTML = currentEvent;
     return domElement;
+    // console.log(domElement)
     // return domElement.append(currentEvent);
+    
 
 };
 
@@ -64,9 +66,23 @@ export const renderEvents = () => {
             id: 6.777, // id понадобится для работы с событиями
             title: 'Event3',
             description: 'Event 3 description',
-            start: new Date('2020-03-31T01:10:00.000Z'),
-            end: new Date('2020-03-31T04:30:00.000Z'),
-        }
+            start: new Date('2020-04-02T01:10:00.000Z'),
+            end: new Date('2020-04-02T04:30:00.000Z'),
+        },
+        {
+            id: 9.777, // id понадобится для работы с событиями
+            title: 'Event4',
+            description: 'Event 4 description',
+            start: new Date('2020-04-01T01:10:00.000Z'),
+            end: new Date('2020-04-01T04:30:00.000Z'),
+        },
+        {
+            id: 8.777, // id понадобится для работы с событиями
+            title: 'Event5',
+            description: 'Event 5 description',
+            start: new Date('2020-04-03T01:10:00.000Z'),
+            end: new Date('2020-04-03T04:30:00.000Z'),
+        },
     ], );
 
     const events = getItem('events')
@@ -79,18 +95,18 @@ export const renderEvents = () => {
         const currentWeekStart = currentDate.getDate() - currentDate.getDay() + 1;
         const currentWeekEnd = currentWeekStart + 6;
 
-        // console.log(
-        //   "endDateFormatted: ",
-        //   endDateFormatted,
-        //   " startDateFormatted:= ",
-        //   startDateFormatted,
-        //   " currentDay: ",
-        //   currentDay,
-        //   " currentWeekStart:= ",
-        //   currentWeekStart,
-        //   " currentWeekEnd:= ",
-        //   currentWeekEnd
-        // );
+        console.log(
+          "endDateFormatted: ",
+          endDateFormatted,
+          " startDateFormatted:= ",
+          startDateFormatted,
+          " currentDay: ",
+          currentDay,
+          " currentWeekStart:= ",
+          currentWeekStart,
+          " currentWeekEnd:= ",
+          currentWeekEnd
+        );
 
         return (
             startDateFormatted >= currentWeekStart &&
@@ -100,17 +116,17 @@ export const renderEvents = () => {
     };
 
     const filteredEvents = events.filter(isCurrentWeek);
-
-    isCurrentWeek(events[1]);
+    console.log(events);
     console.log(filteredEvents);
-    const timeSlot = document.querySelector('.calendar__day-sell')
-        //   const finalEvents = createEventElement(filteredEvents);
-        //   timeSlot.innerHTML = createEventElement(filteredEvents);
-    const domElem = createEventElement(filteredEvents);
-    timeSlot.innerHTML = domElem;
+    // console.log(filteredEvents[1].start.getDate());
+    // console.log(filteredEvents[0].start.getHours());
+    // console.log(createEventElement(filteredEvents));
+    const slotElem = document.querySelector(
+        `.calendar__day[data-day="${filteredEvents[0].start.getDate()}"] .calendar__day-sell[data-time="${filteredEvents[0].start.getHours()}"]`,
+    );
+    console.log(slotElem);
+    slotElem.innerHTML = createEventElement(filteredEvents);
 };
-renderEvents();
-
 
 function onDeleteEvent() {
     // достаем из storage массив событий и eventIdToDelete
