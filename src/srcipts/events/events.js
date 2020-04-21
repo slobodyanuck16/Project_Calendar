@@ -52,15 +52,15 @@ export const renderEvents = () => {
             id: 0.7890, // id понадобится для работы с событиями
             title: 'Event1',
             description: 'Event 1 description',
-            start: new Date('2020-03-26T01:10:00.000Z'),
-            end: new Date('2020-03-26T04:30:00.000Z'),
+            start: new Date('2020-04-05T01:10:00.000Z'),
+            end: new Date('2020-04-05T04:30:00.000Z'),
         },
         {
             id: 1.555, // id понадобится для работы с событиями
             title: 'Event2',
             description: 'Event 2 description',
-            start: new Date('2020-03-23T01:10:00.000Z'),
-            end: new Date('2020-03-23T04:30:00.000Z'),
+            start: new Date('2020-04-06T01:10:00.000Z'),
+            end: new Date('2020-04-06T04:30:00.000Z'),
         },
         {
             id: 6.777, // id понадобится для работы с событиями
